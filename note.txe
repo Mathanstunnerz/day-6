@@ -1,0 +1,174 @@
+        1)  class - movie
+
+class Movie{
+    constructor(title,studio,rating){
+    
+                this.title = title;
+                this.studio =studio;
+                if(rating == undefined){
+                    this.rating = "PG13";
+    
+    } else{
+                    this.rating = rating;
+    
+    }
+    
+    }
+
+getPG(arry){
+    var result =[];
+    for(var i=0;i<arry.length; i++){
+     if(arry[i].rating == "PG"){
+        result.push(arry[i]);
+     }   
+
+
+}
+return result;
+    }
+}
+    var movie = new Movie("soorarai potru","2d entertainment");
+    var movie2 = new Movie("vikram","rkfi","PG17");
+    var movie3= new Movie("soorarai","2d");
+    var movie4 = new Movie("kaithi","dwp","PG192");
+    var arr = [movie,movie2,movie3,movie4];
+    console.log(movie2.getPG(arr));
+------------------------------------------------------------------------------------------------
+
+                        2)       Circle - Class
+
+
+class Circle{
+    constructor(radius,color){
+        this.radius = radius;
+        this.color = color;
+    
+    }
+    get radiusofCircle(){
+        return this.radius;
+    }
+    set radiusofCircle(radius){
+        this.radius = 20;
+    }
+    get colorCircle(){
+        return this.color;
+    }
+    set colorCircle(color){
+        this.color = color;
+    }
+    get tostring(){
+        return`circle[radius ${this.radius} color ${this.color}]`;
+    }
+    get areaCicle(){
+        return Math.PI * this.radius * this.radius;
+
+    }
+    get Circumference(){
+        return 2* Math.PI * this.radius ;
+    }
+      
+
+
+
+}
+
+var ras = new Circle(1.0,"red");
+console.log(ras.radiusofCircle);
+ras.radiusofCircle = 20
+console.log(ras.radiusofCircle);
+
+console.log(ras.colorCircle);
+ras.colorCircle = "black";
+
+console.log(ras.colorCircle);
+-----------------------------------------------------------------------
+              
+              3)class Person 
+
+class Person{
+
+    constructor(name){
+        this.name = name;
+    }
+}
+
+var arr = new Person(`
+name: mathankumar
+gender : male
+age : 20
+height : 164
+weight : 53
+color : white
+education : mech(diploma) , devaloper
+hobby : video editing , flim making , music`
+
+ 
+);
+console.log(arr.name);
+-----------------------------------------------------------------------------------
+
+             4)  class uber price
+
+
+class Uberprice{
+    
+   
+    constructor(passenger,place,distance,time){
+        
+        if(passenger === String){
+            this.passenger = "error"
+        }
+       else if(passenger ==0){
+            this.passenger = "error";
+
+        }    
+        else if(passenger == 1){
+            this.passenger = 
+`vehicle type :bike
+pick place :${place} 
+distance : ${distance} 
+cost : ${distance* 5}Rs
+vehicle speed : 40 kmhr
+starting time : ${time}`;
+        }
+                         
+       else  if  (passenger <4) {
+         this.passenger = `vehicle type :hatchback
+pick place :${place} 
+distance : ${distance} 
+cost : ${distance* 8}Rs
+vehicle speed : 75 kmhr
+starting time : ${time}`; 
+         } 
+       
+      else if ( passenger<7){
+        this.passenger = `vehicle type :suv
+pick place :${place} 
+distance : ${distance} 
+cost : ${distance* 10}Rs
+vehicle speed : 80 kmhr
+starting time : ${time}`;  
+        }
+       else if (passenger <9){
+           this.passenger = `vehicle type :mpv
+pick place :${place} 
+distance : ${distance} 
+cost : ${distance* 12}Rs
+vehicle speed : 80 kmhr
+starting time : ${time}`; 
+        }
+       else {
+     this.passenger = "Enter a valid passenger";
+        }
+     
+        if(distance <15 ){
+                    this.distance= distance * 5;
+                }
+        this.time = time;
+
+}
+}
+
+
+var obj1 = new Uberprice(8,"dharapuram",30,8.00);
+console.log(obj1.passenger) ;
